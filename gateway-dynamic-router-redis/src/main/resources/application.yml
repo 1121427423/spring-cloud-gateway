@@ -1,10 +1,10 @@
 # 应用端口
 server:
-  port: 9002
+  port: 9003
 # 应用名称
 spring:
   application:
-    name: gateway-dynamic-router-nacos
+    name: gateway-dynamic-router-redis
   cloud:
     nacos:
       username: nacos
@@ -21,14 +21,14 @@ spring:
         namespace: 1e3e5606-e4b6-4935-9c57-a44e34a6e770
         server-addr: ${spring.cloud.nacos.server-addr}
 
-nacos:
-  gateway:
-    route:
-      config:
-        data-id: nacos-gateway
-        group: DEFAULT_GROUP
-
-
+  redis:
+    host: 123.60.148.210
+    port: 6379
+    database: 0
+    password: redis123
+    lettuce:
+      pool:
+        enabled: true
 # http://{ip}:{port}/actuator
 management:
   endpoints:
@@ -36,5 +36,8 @@ management:
       exposure:
         include: '*'
         exclude: env,beans
+
+
+
 
 
