@@ -1,0 +1,38 @@
+# 应用端口
+server:
+  port: 9001
+# 应用名称
+spring:
+  application:
+    name: gateway-static-router
+  cloud:
+    gateway:
+      enabled: true
+      routes:
+          # 路由的唯一标识id
+        - id: gateway-static-router-test-01
+          # 路由的匹配条件
+          predicates:
+            - Path=/gateway/bd/**
+          # 过滤器
+          filters:
+            - StripPrefix=2
+          # 映射后的地址
+          uri: https://www.baidu.com/
+        - id: gateway-static-router-test-02
+          predicates:
+           - Path=/gateway/jd/**
+          filters:
+           - StripPrefix=2
+          uri: https://www.jd.com/
+
+# http://{ip}:{port}/actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: env,beans
+
+
+
