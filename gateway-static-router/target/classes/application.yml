@@ -17,7 +17,7 @@ spring:
           # 过滤器
           filters:
             - StripPrefix=2
-          # 映射后的地址， 地址不全会导致重定向
+          # 映射后的地址
           uri: https://baidu.com/
         - id: gateway-static-router-test-02
           predicates:

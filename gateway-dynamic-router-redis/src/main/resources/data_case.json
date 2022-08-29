@@ -1,0 +1,20 @@
+{
+    "id": "gateway-dynamic-router-redis-test",
+    "predicates": [
+        {
+            "name": "Path",
+            "args": {
+                "_genkey_0": "/gateway/bd/**"
+            }
+        }
+    ],
+    "filters": [
+        {
+            "name": "StripPrefix",
+            "args": {
+                "_genkey_0": "2"
+            }
+        }
+    ],
+    "uri": "https://www.baidu.com"
+}

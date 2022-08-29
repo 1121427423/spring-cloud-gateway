@@ -1,0 +1,50 @@
+[
+    {
+        "id":"gateway-dynamic-router-nacos-test-01",
+        "predicates": [
+            {
+                "name": "Path",
+                "args": {
+                    "_genkey_0": "/gateway/bd/**"
+                }
+            }
+        ],
+        "filters": [
+            {
+                "name": "StripPrefix",
+                "args": {
+                    "_genkey_0": "2"
+                }
+            }
+        ],
+        "uri": "https://www.baidu.com"
+
+    },
+    {
+        "id":"gateway-dynamic-router-nacos-test-02",
+        "predicates": [
+            {
+                "name": "Path",
+                "args": {
+                    "_genkey_0": "/gateway/jd/**"
+                }
+            },
+            {
+                "name": "Method",
+                "args": {
+                    "_genkey_0": "Get"
+                }
+            }
+        ],
+        "filters": [
+            {
+                "name": "StripPrefix",
+                "args": {
+                    "_genkey_0": "2"
+                }
+            }
+        ],
+        "uri": "https://www.jd.com"
+
+    }
+]
